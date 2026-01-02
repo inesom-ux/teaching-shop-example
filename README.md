@@ -45,6 +45,7 @@ boutique-couture/
 - **Node.js** >= 18.x
 - **Python** >= 3.11
 - **uv** (Python package manager)
+- **tmux**
 
 ## Documentation
 
