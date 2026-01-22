@@ -169,7 +169,8 @@ From the `backend/` directory, build your Docker image:
 cd backend
 
 # Build the image and tag it as "boutique-backend"
-docker build -t boutique-backend .
+
+ .
 ```
 
 **Understanding the command:**
@@ -203,9 +204,11 @@ If the build fails:
 
 Now run your container:
 
+
 ```bash
 # Run the container
 docker run -p 8000:8000 boutique-backend
+
 ```
 
 **Understanding the command:**
