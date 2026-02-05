@@ -25,14 +25,14 @@ jobs:
       # Build et push backend
       - name: Build and push backend
         run: |
-          docker build -t ghcr.io/inesom-ux/boutique-backend:latest ./backend
-          docker push ghcr.io/inesom-ux/boutique-backend:latest
+          docker build -t ghcr.io/inesom-ux/teaching-shop-example/boutique-backend:latest ./backend
+          docker push ghcr.io/inesom-ux/teaching-shop-example/boutique-backend:latest
       
       # Build et push frontend
       - name: Build and push frontend
         run: |
-          docker build -t ghcr.io/inesom-ux/boutique-frontend:latest ./frontend
-          docker push ghcr.io/inesom-ux/boutique-frontend:latest
+          docker build -t ghcr.io/inesom-ux/teaching-shop-example/boutique-frontend:latest ./frontend
+          docker push ghcr.io/inesom-ux/teaching-shop-example/boutique-frontend:latest
 
   deploy:
     needs: build-and-push
@@ -65,7 +65,7 @@ jobs:
                   - postgres-data:/var/lib/postgresql/data
             
               backend:
-                image: ghcr.io/inesom-ux/boutique-backend:latest
+                image: ghcr.io/inesom-ux/teaching-shop-example/boutique-backend:latest
                 ports:
                   - "8000:8000"
                 environment:
@@ -77,7 +77,7 @@ jobs:
                   - db
             
               frontend:
-                image: ghcr.io/inesom-ux/boutique-frontend:latest
+                image: ghcr.io/inesom-ux/teaching-shop-example/boutique-frontend:latest
                 ports:
                   - "8080:80"
                 depends_on:
